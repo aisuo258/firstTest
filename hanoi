@@ -1,0 +1,20 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+char tower[3]={'a','b','c'};
+void hanoi(char a,char b,char c,int floor)
+{
+    if(floor<=1)
+    {
+        printf("%c -> %c\n",a,c);
+        return;
+    }
+    hanoi(a,c,b,floor-1);
+    printf("%c -> %c\n",a,c);
+    hanoi(b,a,c,floor-1);
+}
+int main()
+{
+    hanoi(tower[0],tower[1],tower[2],4);
+    return 0;
+}
